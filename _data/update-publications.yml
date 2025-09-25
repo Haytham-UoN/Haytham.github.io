@@ -1,0 +1,50 @@
+name: Update publications.bib
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"   # Every Monday at 03:17 UTC
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/**"
+      - "data/**"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests bibtexparser unidecode scholarly
+
+      - name: Generate publications.bib
+        env:
+          ORCID_ID: "0000-000-2-5238-4590"
+          SCHOLAR_ID: "TnUmf84AAAAJ"
+          USE_SCHOLAR: "false"   # set to "true" if you want Scholar supplementation
+          MAX_YEARS_BACK: "0"    # "0" = no filter; set e.g. "10" to keep last 10 years
+        run: |
+          python scripts/update_publications.py
+
+      - name: Commit and push changes (if any)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add publications.bib
+            git commit -m "chore: update publications.bib from ORCID/Crossref"
+            git push
+          else
+            echo "No changes to commit."
