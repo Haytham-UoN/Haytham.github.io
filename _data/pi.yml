@@ -1,17 +1,18 @@
-- name: Dr. Richard Feynman
-  photo: headshot.jpg
-  info: Richard C. Tolman Professor, California Institute of Technology
-  email: richard@university.edu
+- name: Dr. Haytham Hussein
+  photo: 
+  info: Haytham Hussein, Research fellow, University of Nottingham
+  email: haytham.hussein@nottingham.ac.uk
   github: https://github.com/
-  researchgate: https://www.researchgate.net/
-  scholar: https://scholar.google.com/citations?user=B7vSqZsAAAAJ
-  cv: cv/cv.pdf
+  researchgate: https://www.researchgate.net/profile/Haytham-Hussein
+  scholar: https://scholar.google.com/citations?user=TnUmf84AAAAJ&hl=en
+  cv: 
   # Change the items in "education" you have (up to 6)
   education:
     [
-      "(1942) Ph.D. Physics, Princeton University",
-      "(1939) B.S. Physics, Massachusetts Institute of Technology",
+      "(2019) Ph.D. Chemistry, University of Warwick",
+      "(2014) M.Sc. Chemistry, University of Warwick",
+      "(2006) B.Sc. Chemistry, Zagazig University",
     ]
 
   educationshort:
-    ["(1942) Ph.D. Physics, Princeton", "(1939) B.S. Physics, MIT"]
+    ["(2019) Ph.D. chemistry, Warwick", "(2006) B.S. chemistry, Zagazig"]
