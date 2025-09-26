@@ -18,3 +18,4 @@ group :jekyll_plugins do
 end
 # Windows-specific gem
 #gem "wdm", "~> 0.1.1", :platforms => [:mingw, :mswin, :x64_mingw]
+gem "github-pages", "~> 232", group: :jekyll_plugins
