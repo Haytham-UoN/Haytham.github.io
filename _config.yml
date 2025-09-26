@@ -1,9 +1,9 @@
 # Site settings
-title: Haytham Hussein
-email: haytham.hussein@nottingham.ac.uk
-description: Academic webpage of Dr. Haytham Hussein @UoN
+title: "Dr. Haytham's Research Group"
+email: "haytham.hussein@nottingham.ac.uk"
+description: "Research on e-waste recycling and critical elements recovery"
 baseurl: ""
-url: ""
+url: "https://haytham-uon.github.io"
 
 # Google analytics ID: Uncomment and your own, if you like
 # google_analytics: XX
@@ -22,24 +22,20 @@ location: >
   Nottingham, NG7 2TU, The UK
 
 contact: >
-  <a href="mailto:haytham.hussein@nottingham.ac.uk" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Richard via email</a> <br/>
-  <a href="https://github.com/sbryngelson/academic-website-template"><i class="fa fa-github fa-1x"></i> Use this site as a template!</a>
+  <a href="mailto:haytham.hussein@nottingham.ac.uk" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Haytham via email</a> <br/>
+  <a href="https://github.com/Haytham-UoN"><i class="fa fa-github fa-1x"></i> Visit our GitHub</a>
 
-# Pages shown in navbar
+# Pages shown in navbar (simplified - fix these later)
 nav_pages:
   - name: about
   - name: publications
-  - name: talks/presentation
-  - name: research/projects
-  - name: software/coding
+  - name: projects
   - name: team
-  - name: teaching/tutorials/classes
+  - name: tutorials
   - name: collaborators
-  - name: grants/funding/sponsors
-  - name: blogs
+  - name: funding
 
 include:
-  - .htaccess
   - _pages
 
 # Conversion
@@ -59,39 +55,23 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
-  parse_block_html: true # default for kramdown is false. This will enable using Markdown links
+  parse_block_html: true
 
-plugins: ["jekyll/scholar"]
+# Plugins (simplified for GitHub Pages compatibility)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
-scholar:
-  last_name: Hussein
-  first_name: [Haytham]
+# Basic scholar configuration (commented out for now)
+# scholar:
+#   style: apa
+#   locale: en
+#   bibliography: references.bib
 
-  style: citesty
-  locale: en
-
-  source: /assets/
-  bibliography: ref.bib
-  bibliography_template: bibtemplate
-  sort_by: year, month
-  order: descending
-
-  replace_strings: true
-  join_strings: true
-
-  details_dir: bibliography
-  details_layout: bibtex.html
-  details_link: Details
-
-  query: "@*"
-
-  bibliography_list_attributes:
-    reversed: "reversed"
-
+# Exclude unnecessary files
 exclude:
   - Gemfile
   - Gemfile.lock
-  - update_boostrap.sh
-  - switch_theme.sh
-  - tags
-  - Rakefile
+  - node_modules
+  - vendor
+  - .sass-cache
