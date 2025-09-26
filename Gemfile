@@ -9,3 +9,13 @@ gem "csv"
 gem "base64"
 gem "bigdecimal"
 gem "observer"
+
+gem "minima"
+# Plugins supported by GitHub Pages
+group :jekyll_plugins do
+  gem "jekyll-feed"
+  gem "jekyll-seo-tag"
+end
+
+# Windows-specific gem
+gem "wdm", "~> 0.1.1", :platforms => [:mingw, :mswin, :x64_mingw]
