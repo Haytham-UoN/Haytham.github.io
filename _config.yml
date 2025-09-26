@@ -2,8 +2,9 @@
 title: "Dr. Haytham's Research Group"
 email: "haytham.hussein@nottingham.ac.uk"
 description: "Research on e-waste recycling and critical elements recovery"
-baseurl: ""
-url: "https://haytham-uon.github.io"
+baseurl: "/haytham/"
+url: "https://haytham.github.io"
+domain: haytham.github.io   
 
 # Google analytics ID: Uncomment and your own, if you like
 # google_analytics: XX
